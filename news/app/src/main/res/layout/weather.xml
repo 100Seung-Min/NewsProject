@@ -5,13 +5,38 @@
     android:orientation="vertical"
     android:background="@color/black">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginTop="100dp"
+        android:paddingTop="30dp">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="weather"
-        android:textColor="@color/white"
-        android:textSize="100sp"
-        android:gravity="center"/>
+        android:textColor="@color/black"
+        android:textSize="60sp"
+        android:gravity="center"
+        android:id="@+id/temperate"/>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/other"/>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:id="@+id/wind"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

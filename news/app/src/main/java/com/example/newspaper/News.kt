@@ -12,6 +12,21 @@ class News: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.news)
 
+        var i = 0
+
+        val image = findViewById<ImageView>(R.id.img)
+        image.setOnClickListener {
+            if(i == 1) {
+                image.setImageResource(R.drawable.nature)
+                i = 0;
+            }
+            else {
+                image.setImageResource(R.drawable.ic_launcher_foreground)
+                i = 1;
+            }
+        }
+
+
         val home = findViewById<ImageView>(R.id.home)
         home.setOnClickListener(){
             val intent = Intent(this, MainActivity::class.java)

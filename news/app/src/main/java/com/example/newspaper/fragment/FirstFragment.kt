@@ -5,9 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import com.example.newspaper.R
+import org.jetbrains.anko.doAsync
+import org.jsoup.Jsoup
 
 class FirstFragment : Fragment() {
+
+    var i = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,5 +24,22 @@ class FirstFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_first, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val page = view?.findViewById<ImageView>(R.id.page)
+        page.setOnClickListener {
+            if(i == 0){
+                page.setImageResource(R.drawable.ic_launcher_foreground)
+                i = 1;
+            }
+            else {
+                page.setImageResource(R.drawable.nature)
+                i = 0;
+            }
+        }
+
     }
 }
