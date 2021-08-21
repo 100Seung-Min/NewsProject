@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import org.jetbrains.anko.doAsync
 import org.jsoup.Jsoup
 
@@ -49,5 +50,8 @@ class Weather: AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
             startActivity(intent)
         }
+
+        Glide.with(this).load("https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png")
+                .into(findViewById(R.id.img_weather))
     }
 }
