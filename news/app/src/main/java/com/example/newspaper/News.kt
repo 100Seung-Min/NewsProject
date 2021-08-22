@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 
 class News: AppCompatActivity() {
 
@@ -17,11 +18,13 @@ class News: AppCompatActivity() {
         val image = findViewById<ImageView>(R.id.img)
         image.setOnClickListener {
             if(i == 1) {
-                image.setImageResource(R.drawable.nature)
+                Glide.with(this).load("https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png")
+                        .into(findViewById(R.id.img))
                 i = 0;
             }
             else {
-                image.setImageResource(R.drawable.ic_launcher_foreground)
+                Glide.with(this).load("https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png")
+                        .into(findViewById(R.id.img))
                 i = 1;
             }
         }
