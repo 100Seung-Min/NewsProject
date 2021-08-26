@@ -12,10 +12,10 @@
         android:background="@color/white"
         android:weightSum="10">
         <Spinner
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:id="@+id/btn_loc"
-            android:layout_marginTop="5dp"
             android:layout_weight="10"/>
     </LinearLayout>
     <LinearLayout
@@ -113,42 +113,48 @@
         android:layout_height="wrap_content"
         android:weightSum="7">
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:id="@+id/mon_weather"
             android:layout_weight="1"/>
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:id="@+id/tue_weather"
             android:layout_weight="1"/>
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:id="@+id/wed_weather"
             android:layout_weight="1"/>
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:id="@+id/thu_weather"
             android:layout_weight="1"/>
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:id="@+id/fri_weather"
             android:layout_weight="1"/>
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:id="@+id/sat_weather"
             android:layout_weight="1"/>
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:id="@+id/sun_weather"
             android:layout_weight="1"/>
 
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        android:id="@+id/txt"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

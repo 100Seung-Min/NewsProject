@@ -12,8 +12,6 @@ import org.jsoup.Jsoup
 
 class FirstFragment : Fragment() {
 
-    var i = 0;
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -28,18 +26,6 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val page = view?.findViewById<ImageView>(R.id.page)
-        page.setOnClickListener {
-            if(i == 0){
-                page.setImageResource(R.drawable.ic_launcher_foreground)
-                i = 1;
-            }
-            else {
-                page.setImageResource(R.drawable.nature)
-                i = 0;
-            }
-        }
 
     }
 }
