@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="내 손안에"
+        android:text="오늘의"
         android:textSize="40sp"
         android:textColor="@color/white"
         android:fontFamily="@font/tway_fly"/>
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="뉴스"
+        android:text="날씨"
         android:textSize="70sp"
         android:textColor="@color/white"
         android:fontFamily="@font/tway_fly"/>
