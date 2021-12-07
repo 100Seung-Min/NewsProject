@@ -5,40 +5,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.newspaper.DTO.WeatherData
+import com.example.newspaper.Retrofit.RetrofitClient
+import com.example.newspaper.databinding.ActivityMainBinding
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
+        val day = (SimpleDateFormat("yyyyMMdd").format(Date()).toInt() - 1).toString()
+        RetrofitClient.api.getWeather(pageResult = 10, pageNumber = 1, pageCode = "ASOS", dateCode = "DAY", startDay = day, endDay = day, cityNumber = 108).enqueue(object : Callback<WeatherData>{
+            override fun onResponse(call: Call<WeatherData>, response: Response<WeatherData>) {
+                println("여기 ${response.body()!!.response.body.items.item[0].stnNm}")
+            }
 
-        val viewPager2=findViewById<ViewPager2>(R.id.viewpager)
-
-        val adapter=Adapter(supportFragmentManager, lifecycle)
-
-        viewPager2.adapter=adapter
-
-        val home = findViewById<ImageView>(R.id.home)
-        home.setOnClickListener(){
-            val intent = Intent(this, MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-            startActivity(intent)
-        }
-
-        val news = findViewById<ImageView>(R.id.news)
-        news.setOnClickListener(){
-            val intent = Intent(this, News::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-            startActivity(intent)
-        }
-
-        val weather = findViewById<ImageView>(R.id.weather)
-        weather.setOnClickListener(){
-            val intent = Intent(this, Weather::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-            startActivity(intent)
-        }
+            override fun onFailure(call: Call<WeatherData>, t: Throwable) {
+                println("여기 에러 ${t}")
+            }
+        })
     }
 }
