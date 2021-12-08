@@ -1,7 +1,7 @@
 package com.example.newspaper.DTO
 
 data class WeatherData(
-    val response: ResponseData,
+    val response: ResponseData
 )
 
 data class ResponseData(
